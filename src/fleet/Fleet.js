@@ -9,15 +9,28 @@ class Fleet {
         this.colection.push(ship);
     }
     removeShip(id) {
-        this.colection.splice(id, 1);
+        this.colection.forEach((c) => {
+            console.log(c.getId() + 1 + ' - ' + c.getName());
+        });
+        this.colection.splice(id - 1, 1);
     }
     findShip(id) {
         return this.colection.find(s => s.getId() === id);
     }
     showFleet() {
-        this.colection.forEach((c, i) => {
-            console.log(i + 1 + ' - ' + c.getName());
+        console.log('============================\n' + '        SpaceCraft\n' + '============================');
+        this.colection.forEach((c) => {
+            console.log(c.getId() + 1 + ' - ' + c.getName());
         });
+    }
+    getCombatShip() {
+        return this.colection.filter((c) => 'attack' in c);
+    }
+    getCargoShip() {
+        return this.colection.filter((c) => 'loadCargo' in c);
+    }
+    getExplorationShip() {
+        return this.colection.filter((c) => 'explore' in c);
     }
 }
 exports.Fleet = Fleet;

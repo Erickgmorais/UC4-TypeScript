@@ -27,7 +27,7 @@ export abstract class SpaceCraft {
     }
 
     public refuel(): boolean {
-        if(this.fuel < 0 || this.fuel > 100) {
+        if(this.fuel <= 0 || this.fuel >= 100) {
             return false
         } 
         this.fuel += 100;

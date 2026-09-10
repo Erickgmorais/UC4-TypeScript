@@ -6,17 +6,17 @@ import { SpaceCraft } from "../ships/SpaceCraft";
 
 
 export const startCombat = (ship: CombatCapable, target: SpaceCraft): void => {
-    console.log('Figther\n' + ship.attack(target));
+    ship.attack(target);
 }
 
-export const transportCargo = (ship: CargoCarrier, amount: number): void => {
-    console.log('Cargo\n' + ship.loadCargo(amount));
+export const transportCargo = (ship: CargoCarrier, amount: number): void => { 
+    ship.loadCargo(amount);
 }
 
 export const performExploration = (ship: Exploratory, location: string): void => {
-    console.log('Explorating...\n' + ship.explore(location));
+    console.log(ship.explore(location));
 }
 
 export const repairObject = (object: Repairable): void => {
-    console.log(object.repair());
+    object.repairable();
 }

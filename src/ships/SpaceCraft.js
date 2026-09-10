@@ -20,7 +20,7 @@ class SpaceCraft {
         return this.health;
     }
     refuel() {
-        if (this.fuel < 0 || this.fuel > 100) {
+        if (this.fuel <= 0 || this.fuel >= 100) {
             return false;
         }
         this.fuel += 100;

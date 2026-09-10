@@ -11,6 +11,10 @@ export class TransportShip extends SpaceCraft implements CargoCarrier {
         this.currentCargo = 0
     }
 
+    public getName(): string {
+        return this.name;
+    }
+
     public setCargoCapacity(value: number) {
         this.cargoCapacity = value;
     }
@@ -32,6 +36,7 @@ export class TransportShip extends SpaceCraft implements CargoCarrier {
             console.log('Maximum capacity reached.');
         }
         this.currentCargo += amount;
+        console.log('Loaded cargo.');
     }
 
     public unloadCargo(amount: number): void {

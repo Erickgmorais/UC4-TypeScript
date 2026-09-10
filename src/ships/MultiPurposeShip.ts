@@ -13,28 +13,28 @@ export class MultiPurposeShip extends SpaceCraft implements CombatCapable, Cargo
         this.currentCargo = 0;
     }
 
-    loadCargo(amount: number): void {
+    public loadCargo(amount: number): void {
         if(this.currentCargo + amount > this.cargoCapacity) {
             console.log('Maximum capacity reached.');
         }
         this.currentCargo += amount;
     }
 
-    unloadCargo(amount: number): void {
+    public unloadCargo(amount: number): void {
         if(amount < 0 || amount > this.currentCargo) {
             console.log('Invalid capacity.');
         }
         this.currentCargo -= amount
     }
-    getCargoCapacity(): number {
+    public getCargoCapacity(): number {
         return this.getCargoCapacity()
     }
 
-    getCurrentCargo(): number {
+    public getCurrentCargo(): number {
         return this.getCurrentCargo()
     }
 
-    attack(target: SpaceCraft): number {
+    public attack(target: SpaceCraft): number {
         if(this.isOperational()) {
             const damageRandom: number = Math.floor(Math.random() * 25) + 5;
             const damageTarget: number = target.getHealth() - damageRandom
@@ -44,13 +44,13 @@ export class MultiPurposeShip extends SpaceCraft implements CombatCapable, Cargo
         }
     }
 
-   explore(location: string): string {
+    public explore(location: string): string {
         this.fuel -= 10; // 
         return 'The SpaceCraft ' + this.name + ' started an exploration on ' + location;
 
     }
 
-    collectData(): string {
+    public collectData(): string {
         const chooseRandom: number = Math.floor(Math.random() * 3) + 1;
         let message = '';
         

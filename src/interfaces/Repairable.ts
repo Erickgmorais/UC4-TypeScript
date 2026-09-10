@@ -1,4 +1,4 @@
 export interface Repairable {
-    repair(): void;
+    repairable(): void;
     getRepairCost(): number;
 }

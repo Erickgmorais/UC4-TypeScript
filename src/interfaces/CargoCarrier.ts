@@ -3,4 +3,5 @@ export interface CargoCarrier {
     unloadCargo(amount: number): void
     getCargoCapacity(): number;
     getCurrentCargo(): number;
+    getName(): string
 }

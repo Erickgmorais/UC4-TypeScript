@@ -8,13 +8,13 @@ export class ExplorationShip extends SpaceCraft implements Exploratory {
         
     }
 
-    explore(location: string): string {
-        this.fuel -= 10; // 
+    public explore(location: string): string {
+        this.fuel -= 10;
         return 'The SpaceCraft ' + this.name + ' started an exploration on ' + location;
 
     }
 
-    collectData(): string {
+    public collectData(): string {
         const chooseRandom: number = Math.floor(Math.random() * 3) + 1;
         let message = '';
         

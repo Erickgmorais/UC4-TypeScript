@@ -7,7 +7,7 @@ class ExplorationShip extends SpaceCraft_1.SpaceCraft {
         super(name);
     }
     explore(location) {
-        this.fuel -= 10; // 
+        this.fuel -= 10;
         return 'The SpaceCraft ' + this.name + ' started an exploration on ' + location;
     }
     collectData() {

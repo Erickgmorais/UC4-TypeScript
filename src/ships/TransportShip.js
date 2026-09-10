@@ -8,6 +8,9 @@ class TransportShip extends SpaceCraft_1.SpaceCraft {
         this.cargoCapacity = 100;
         this.currentCargo = 0;
     }
+    getName() {
+        return this.name;
+    }
     setCargoCapacity(value) {
         this.cargoCapacity = value;
     }
@@ -25,6 +28,7 @@ class TransportShip extends SpaceCraft_1.SpaceCraft {
             console.log('Maximum capacity reached.');
         }
         this.currentCargo += amount;
+        console.log('Loaded cargo.');
     }
     unloadCargo(amount) {
         if (this.cargoCapacity - amount < 0) {

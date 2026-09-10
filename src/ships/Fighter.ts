@@ -11,10 +11,15 @@ export class Fighter extends SpaceCraft implements CombatCapable, Repairable {
         this.weaponPower = weaponPower
     }
 
-    attack(target: SpaceCraft): number {
+    public getName(): string {
+        return this.name
+    }
+
+    public attack(target: SpaceCraft): number {
         if(this.isOperational()) {
             const damageRandom: number = Math.floor(Math.random() * 25) + 5;
             const damageTarget: number = target.getHealth() - damageRandom
+            console.log('Figther anitialized: \n' + 'The target ended up with: ' + damageTarget + ' health.'); 
             return damageTarget;
         } else {
             return 0;
@@ -25,12 +30,12 @@ export class Fighter extends SpaceCraft implements CombatCapable, Repairable {
         return this.fuel -= 15
     }
 
-    public repair(): boolean {
+    public repairable(): void {
         if(this.fuel < 0 || this.health > 100) {
-            return false
+            console.log('Living life to the fullest or running on empty');
         }
         this.fuel -= 25;
         this.health += 30;
-        return true
+        console.log('Spacecraft undergoing restoration.')
     }
 }
